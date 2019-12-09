@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/brouberol/srtoffset/badge.svg?branch=master)](https://coveralls.io/github/brouberol/srtoffset?branch=master)
+
 Apply a time offset to a subtitle .srt file.
 
 Example:
