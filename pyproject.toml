@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "srtoffset"
-version = "0.1.1"
+version = "0.1.2"
 description = "Apply a time offset to a subtitle .srt file"
 authors = ["Balthazar Rouberol <br@imap.cc>"]
 license = "MIT"
