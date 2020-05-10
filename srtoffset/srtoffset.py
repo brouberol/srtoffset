@@ -81,9 +81,7 @@ class Subtitle:
 
     @classmethod
     def from_block(cls, block):
-        start_time, end_time = map(
-            SubtitleTime.from_str, block[1].split(TIME_SEPARATOR)
-        )
+        start_time, end_time = map(SubtitleTime.from_str, block[1].split(TIME_SEPARATOR))
         return cls(
             index=block[0],
             start_time=start_time,
@@ -141,9 +139,7 @@ class SubtitleTime:
         self.milliseconds = milliseconds
 
     def __repr__(self):  # pragma: no cover
-        return "<{cls} {self_str}>".format(
-            cls=self.__class__.__name__, self_str=str(self)
-        )
+        return "<{cls} {self_str}>".format(cls=self.__class__.__name__, self_str=str(self))
 
     def __str__(self):
         h = str(self.hours).zfill(2)
@@ -158,9 +154,7 @@ class SubtitleTime:
     def __add__(self, offset):
         """Implements adding an offset time to the current SubtitleTime object."""
         extra_seconds, ms = divmod(self.milliseconds + offset.milliseconds, 1000)
-        extra_minutes, seconds = divmod(
-            self.seconds + offset.seconds + extra_seconds, 60
-        )
+        extra_minutes, seconds = divmod(self.seconds + offset.seconds + extra_seconds, 60)
         extra_hours, minutes = divmod(self.minutes + offset.minutes + extra_minutes, 60)
         hours = self.hours + offset.hours + extra_hours
         return self.__class__(hours, minutes, seconds, ms)
@@ -169,9 +163,7 @@ class SubtitleTime:
 def main():  # pragma: no cover
     args = parse_args()
     if not os.path.exists(args.subtitles):
-        print(
-            "{subtitles} file does not exist. Exiting.".format(subtitles=args.subtitles)
-        )
+        print("{subtitles} file does not exist. Exiting.".format(subtitles=args.subtitles))
         sys.exit(1)
 
     try:
