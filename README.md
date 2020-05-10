@@ -46,7 +46,6 @@ Adding subtitles is very easy to do
 ## Setup the dev environment
 
 ```console
-$ poetry init
 $ poetry install
 ```
 
